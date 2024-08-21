@@ -25,5 +25,10 @@ public class BusinessTipoInfraccionImplement  implements  BusinessTipoInfraccion
         return this.manageTipoInfraccionInterface.findById(tipoInfraccionDTO);
     }
 
+    @Override
+    public void delete(TipoInfraccionDTO tipoInfraccionDTO) throws Exception {
+        this.manageTipoInfraccionInterface.delete(tipoInfraccionDTO);
+    }
+
 
 }

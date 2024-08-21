@@ -4,6 +4,7 @@ package com.sofca.transito.manager;
 
 import com.sofca.transito.dao.TipoInfraccionDaoInterface;
 
+import com.sofca.transito.dto.PersonaDTO;
 import com.sofca.transito.dto.TipoInfraccionDTO;
 import org.springframework.stereotype.Component;
 
@@ -29,5 +30,10 @@ public class ManagerTipoInfraccionImplement implements  ManageTipoInfraccionInte
     public TipoInfraccionDTO findById(TipoInfraccionDTO tipoInfraccionDTO) {
         TipoInfraccionDTO TipoInfraFound = this.tipoInfraccionDaoInterface.findById(tipoInfraccionDTO);
         return TipoInfraFound;
+    }
+    @Override
+    public void delete(TipoInfraccionDTO tipoInfraccionDTO) {
+       this.tipoInfraccionDaoInterface.delete(tipoInfraccionDTO);
+
     }
 }

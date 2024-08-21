@@ -50,5 +50,20 @@ public class TipoInfraccionController {
 
         return ResponseEntity.ok(message);
     }
+    @PostMapping({"/Delete"})
+    public ResponseEntity<ResponseMessage<TipoInfraccionDTO>> delete(@RequestBody TipoInfraccionDTO request) {
+        log.debug("REST request to Delete Tipo Infraccion : {}", request);
+        ResponseMessage message =null;
+        try{
+           this.businessTipoInfraccionInterface.delete(request);
+
+            message = new ResponseMessage<>(200, "Delete, process successful ", request);
+        }catch (Exception ex){
+            message = new ResponseMessage<>(406, ex.getMessage(),null);
+        }
+
+
+        return ResponseEntity.ok(message);
+    }
 
 }

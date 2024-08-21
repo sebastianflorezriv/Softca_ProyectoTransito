@@ -3,8 +3,9 @@ package com.sofca.transito.dto;
 
 
 public class TipoInfraccionDTO {
-    private String nombre;
     private String id;
+    private String nombre;
+
     private String descripcion;
     private String normativa;
     private String valor;
