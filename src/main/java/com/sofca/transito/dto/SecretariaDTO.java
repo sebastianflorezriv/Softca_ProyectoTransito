@@ -7,6 +7,6 @@ import lombok.Setter;
 public class SecretariaDTO {
     private String jurisdiccion;
     private String ciudad;
-    private int codigoCiudad;
+    private String codigoCiudad;
 
 }

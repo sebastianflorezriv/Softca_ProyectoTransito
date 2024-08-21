@@ -11,7 +11,7 @@ public interface AgenteDaoInterface {
     void insert(AgenteDTO agenteDTO);
     List<AgenteDTO> selectAll();
     public List<Map<String,Object>> selectAll2(AgenteDTO agenteDTO);
-    PersonaDTO findById(AgenteDTO agenteDTO);
+    AgenteDTO findById(AgenteDTO agenteDTO);
     void update(AgenteDTO agenteDTO);
     void delete(AgenteDTO agenteDTO);
 
