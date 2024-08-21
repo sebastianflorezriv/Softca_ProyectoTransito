@@ -2,6 +2,7 @@ package com.sofca.transito.dao;
 
 
 import com.sofca.transito.dto.TipoInfraccionDTO;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;

@@ -6,10 +6,12 @@ import com.sofca.transito.mapper.PersonaMapper;
 import com.sofca.transito.mapper.TipoInfraccionMapper;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.util.List;
 import java.util.Map;
+@Repository
 
 public class TipoInfraccionDaoImplements implements  TipoInfraccionDaoInterface {
     private JdbcTemplate jdbcTemplate;
