@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 @Repository
 
+@Repository
 public class TipoInfraccionDaoImplements implements  TipoInfraccionDaoInterface {
     private JdbcTemplate jdbcTemplate;
 

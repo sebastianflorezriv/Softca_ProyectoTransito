@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 
+@Component
 public class ManagerTipoInfraccionImplement implements  ManageTipoInfraccionInterface{
     public TipoInfraccionDaoInterface tipoInfraccionDaoInterface;
     public ManagerTipoInfraccionImplement(TipoInfraccionDaoInterface tipoInfraccionDaoInterface){

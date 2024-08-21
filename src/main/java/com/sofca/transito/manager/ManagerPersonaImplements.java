@@ -5,11 +5,11 @@ import com.sofca.transito.dto.PersonaDTO;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ManagerPersonaImplement implements ManagerPersonaInterface {
+public class ManagerPersonaImplements implements ManagerPersonaInterface {
 
     public PersonaDaoInterface personaDaoInterface;
 
-    public ManagerPersonaImplement(PersonaDaoInterface personaDaoInterface){
+    public ManagerPersonaImplements(PersonaDaoInterface personaDaoInterface){
         this.personaDaoInterface=personaDaoInterface;
     }
 

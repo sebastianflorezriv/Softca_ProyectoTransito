@@ -5,8 +5,8 @@ import lombok.Setter;
 
 @Getter @Setter
 public class SecretariaDTO {
-    private String jurisdiccion;
+    private String idSecretaria;
     private String ciudad;
-    private String codigoCiudad;
+    private String jurisdiccion;
 
 }

@@ -34,7 +34,7 @@ public class AgenteDaoImplements implements AgenteDaoInterface {
                 agenteDTO.getJurisdiccion(),
                 agenteDTO.getRango(),
                 agenteDTO.getNumPlaca(),
-                agenteDTO.getSecretariaDTO().getCodigoCiudad());
+                agenteDTO.getSecretariaDTO().getIdSecretaria());
 
         return;
     }
@@ -53,7 +53,22 @@ public class AgenteDaoImplements implements AgenteDaoInterface {
     public AgenteDTO findById(AgenteDTO agenteDTO) {
 
         try{
-            String QUERY = "SELECT cedula,nombre,correo,contrasenaacceso,jurisdiccion,rangopolicial,numeroplaca,idsecretaria FROM agentetransito WHERE cedula=? ";
+            String QUERY = "\tSELECT  A.cedula,\n" +
+                    "\t\t\tA.nombre,\n" +
+                    "\t\t\tA.correo,\n" +
+                    "\t\t\tA.contrasenaacceso,\n" +
+                    "\t\t\tA.jurisdiccion,\n" +
+                    "\t\t\tA.rangopolicial,\n" +
+                    "\t\t\tA.numeroplaca,\n" +
+                    "\t\t\tA.idsecretaria,\n" +
+                    "\t\t\tB.ciudad,\n" +
+                    "\t\t\tB.jurisdiccion\n" +
+                    "\tFROM agentetransito A \n" +
+                    "\t     INNER JOIN\n" +
+                    "\t\t secretariatransito B ON A.idsecretaria=B.idsecretaria\n" +
+                    "\tWHERE A.cedula=? ";
+
+
             return jdbcTemplate.queryForObject(QUERY, new AgenteMapper(),agenteDTO.getCedula());
         }catch(EmptyResultDataAccessException ex){
             return null;
@@ -74,7 +89,7 @@ public class AgenteDaoImplements implements AgenteDaoInterface {
                 agenteDTO.getJurisdiccion(),
                 agenteDTO.getRango(),
                 agenteDTO.getNumPlaca(),
-                agenteDTO.getSecretariaDTO().getCodigoCiudad(),
+                agenteDTO.getSecretariaDTO().getIdSecretaria(),
                 agenteDTO.getCedula());
 
         return;
