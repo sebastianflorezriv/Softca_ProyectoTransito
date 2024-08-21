@@ -9,8 +9,6 @@ import com.sofca.transito.dto.TipoInfraccionDTO;
 import org.springframework.stereotype.Component;
 
 @Component
-
-@Component
 public class ManagerTipoInfraccionImplement implements  ManageTipoInfraccionInterface{
     public TipoInfraccionDaoInterface tipoInfraccionDaoInterface;
     public ManagerTipoInfraccionImplement(TipoInfraccionDaoInterface tipoInfraccionDaoInterface){
