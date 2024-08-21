@@ -24,7 +24,7 @@ public class AgenteDaoImplements implements AgenteDaoInterface {
     @Override
     public void insert(AgenteDTO agenteDTO) {
 
-        String INSERT = "INSERT INTO agentetransito(cedula,nombre,correo,contrasenaacceso,jurisdiccion,rangopolicial,numeroplaca,idsecretaria) VALUES (?,?,?,?,?.?,?,?)";
+        String INSERT = "INSERT INTO agentetransito(cedula,nombre,correo,contrasenaacceso,jurisdiccion,rangopolicial,numeroplaca,idsecretaria) VALUES (?,?,?,?,?,?,?,?)";
 
         jdbcTemplate.update(INSERT,
                 agenteDTO.getCedula(),
