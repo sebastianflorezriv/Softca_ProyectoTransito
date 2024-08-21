@@ -34,7 +34,7 @@ public class AgenteDaoImplements implements AgenteDaoInterface {
                 agenteDTO.getJurisdiccion(),
                 agenteDTO.getRango(),
                 agenteDTO.getNumPlaca(),
-                agenteDTO.getSecretariaDTO().getCodigoCiudad());
+                agenteDTO.getSecretariaDTO().getIdSecretaria());
 
         return;
     }
@@ -74,7 +74,7 @@ public class AgenteDaoImplements implements AgenteDaoInterface {
                 agenteDTO.getJurisdiccion(),
                 agenteDTO.getRango(),
                 agenteDTO.getNumPlaca(),
-                agenteDTO.getSecretariaDTO().getCodigoCiudad(),
+                agenteDTO.getSecretariaDTO().getIdSecretaria(),
                 agenteDTO.getCedula());
 
         return;

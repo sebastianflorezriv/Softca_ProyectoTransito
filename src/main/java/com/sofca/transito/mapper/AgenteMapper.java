@@ -15,7 +15,7 @@ public class AgenteMapper  implements RowMapper<AgenteDTO> {
         AgenteDTO agt=new AgenteDTO();
         String idSecretaria = resultSet.getString("idsecretaria");
         SecretariaDTO secretaria = new SecretariaDTO();
-        secretaria.setCodigoCiudad(idSecretaria);
+        secretaria.setIdSecretaria(idSecretaria);
 
         agt.setCedula(resultSet.getString("cedula"));
         agt.setNombre(resultSet.getString("nombre"));

@@ -7,10 +7,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Component
 @Transactional
-public class BusinessPersonaImplement implements BusinessPersonaInterface{
+public class BusinessPersonaImplements implements BusinessPersonaInterface{
     private ManagerPersonaInterface managerPersonaInterface;
 
-    public BusinessPersonaImplement(ManagerPersonaInterface managerPersonaInterface){
+    public BusinessPersonaImplements(ManagerPersonaInterface managerPersonaInterface){
         this.managerPersonaInterface=managerPersonaInterface;
     }
     public void saveOrUpdate(PersonaDTO personaDTO) throws Exception{

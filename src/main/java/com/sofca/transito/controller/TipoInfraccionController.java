@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
-@RequestMapping("/personas/")
+@RequestMapping("/tiposdeinfraccion/")
 public class TipoInfraccionController {
     private BusinessTipoInfraccionInterface businessTipoInfraccionInterface;
 
