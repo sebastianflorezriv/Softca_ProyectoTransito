@@ -26,6 +26,7 @@ public class AgenteMapper  implements RowMapper<AgenteDTO> {
         agt.setJurisdiccion(resultSet.getString("jurisdiccion"));
         agt.setRango(resultSet.getString("rangopolicial"));
         agt.setNumPlaca(resultSet.getString("numeroplaca"));
+
         secretaria.setIdSecretaria(resultSet.getString("idsecretaria"));
         secretaria.setCiudad(resultSet.getString("ciudad"));
         secretaria.setJurisdiccion(resultSet.getString("jurisdiccion"));
