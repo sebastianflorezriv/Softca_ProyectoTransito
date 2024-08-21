@@ -21,4 +21,9 @@ public class BusinessAgenteImplements implements BusinessAgenteInterface {
     public AgenteDTO findById(AgenteDTO agenteDTO) throws Exception{
         return this.managerAgenteInterface.findById(agenteDTO);
     }
+
+    @Override
+    public void delete(AgenteDTO agenteDTO) throws Exception {
+        this.managerAgenteInterface.delete(agenteDTO);
+    }
 }

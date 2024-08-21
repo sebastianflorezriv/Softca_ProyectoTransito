@@ -78,9 +78,7 @@ public class AgenteDaoImplements implements AgenteDaoInterface {
     @Override
     public void update(AgenteDTO agenteDTO) {
 
-        String UPDATE = "UPDATE agentetransito\\n\" +\n" +
-                "                    \"SET nombre=?,correo=?,contrasenaacceso=?,jurisdiccion=?,rangopolicial=?,numeroplaca=?,idsecretaria=?\\n\" +\n" +
-                "                    \"WHERE cedula=?\"";
+        String UPDATE = "UPDATE agentetransito SET nombre=?,correo=?,contrasenaacceso=?,jurisdiccion=?,rangopolicial=?,numeroplaca=?,idsecretaria=? WHERE cedula=?";
 
         jdbcTemplate.update(UPDATE,
                 agenteDTO.getNombre(),

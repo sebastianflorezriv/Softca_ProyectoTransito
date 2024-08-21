@@ -4,6 +4,7 @@ import com.sofca.transito.business.BusinessAgenteInterface;
 import com.sofca.transito.business.BusinessPersonaInterface;
 import com.sofca.transito.dto.AgenteDTO;
 import com.sofca.transito.dto.PersonaDTO;
+import com.sofca.transito.dto.TipoInfraccionDTO;
 import com.sofca.transito.mensajes.ResponseMessage;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
@@ -45,6 +46,21 @@ public class AgenteController {
             AgenteDTO agenteDTO= businessAgenteInterface.findById(request);
 
             message = new ResponseMessage<>(200, "findById, process successful ", agenteDTO);
+        }catch (Exception ex){
+            message = new ResponseMessage<>(406, ex.getMessage(),null);
+        }
+
+
+        return ResponseEntity.ok(message);
+    }
+    @PostMapping({"/Delete"})
+    public ResponseEntity<ResponseMessage<TipoInfraccionDTO>> delete(@RequestBody AgenteDTO request) {
+        log.debug("REST request to Delete Agente : {}", request);
+        ResponseMessage message =null;
+        try{
+            this.businessAgenteInterface.delete(request);
+
+            message = new ResponseMessage<>(200, "Delete, process successful ", request);
         }catch (Exception ex){
             message = new ResponseMessage<>(406, ex.getMessage(),null);
         }

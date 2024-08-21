@@ -6,4 +6,5 @@ import com.sofca.transito.dto.PersonaDTO;
 public interface BusinessAgenteInterface {
     public void saveOrUpdate(AgenteDTO agenteDTO) throws Exception;
     public AgenteDTO findById(AgenteDTO agenteDTO) throws Exception;
+    public  void delete(AgenteDTO agenteDTO)throws Exception;
 }

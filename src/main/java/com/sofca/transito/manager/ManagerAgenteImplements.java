@@ -27,4 +27,9 @@ public class ManagerAgenteImplements implements ManagerAgenteInterface{
         AgenteDTO agenteFound = this.agenteDaoInterface.findById(agenteDTO);
         return agenteFound;
     }
+
+    @Override
+    public void delete(AgenteDTO agenteDTO) {
+        this.agenteDaoInterface.delete(agenteDTO);
+    }
 }
