@@ -49,6 +49,7 @@ public class SecretariaDaoImplements implements SecretariaDaoInterface {
     public SecretariaDTO findById(SecretariaDTO secretariaDTO) {
         try{
             String QUERY = "SELECT idsecretaria,ciudad,jurisdiccion FROM secretariatransito WHERE idsecretaria=?";
+            System.out.println(secretariaDTO.getIdSecretaria());
             return jdbcTemplate.queryForObject(QUERY, new SecretariaMapper(),secretariaDTO.getIdSecretaria());
         }catch(EmptyResultDataAccessException ex){
             return null;
