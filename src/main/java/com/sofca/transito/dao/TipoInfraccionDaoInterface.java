@@ -10,7 +10,7 @@ import java.util.Map;
 public interface TipoInfraccionDaoInterface {
     void insert(TipoInfraccionDTO tipoInfraccionDTO);
     List<TipoInfraccionDTO> selectAll();
-    public List<Map<String,Object>> selectAll2(TipoInfraccionDTO tipoInfraccionDTO);
+    public List<Map<String,Object>> selectAll2();
     TipoInfraccionDTO findById(TipoInfraccionDTO tipoInfraccionDTO);
     void update(TipoInfraccionDTO tipoInfraccionDTO);
     void delete(TipoInfraccionDTO tipoInfraccionDTO);

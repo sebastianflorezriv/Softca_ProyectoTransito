@@ -1,34 +1,41 @@
 package com.sofca.transito.business;
 
 import com.sofca.transito.dto.TipoInfraccionDTO;
-import com.sofca.transito.manager.ManageTipoInfraccionInterface;
+import com.sofca.transito.manager.ManagerTipoInfraccionInterface;
 
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
+import java.util.Map;
 
 @Component
 @Transactional
 
 public class BusinessTipoInfraccionImplement  implements  BusinessTipoInfraccionInterface{
-    private ManageTipoInfraccionInterface manageTipoInfraccionInterface;
-    public BusinessTipoInfraccionImplement(ManageTipoInfraccionInterface manageTipoInfraccionInterface){
-        this.manageTipoInfraccionInterface= manageTipoInfraccionInterface;
+    private ManagerTipoInfraccionInterface managerTipoInfraccionInterface;
+    public BusinessTipoInfraccionImplement(ManagerTipoInfraccionInterface managerTipoInfraccionInterface){
+        this.managerTipoInfraccionInterface = managerTipoInfraccionInterface;
     }
 
     @Override
     public void saveOrUpdate(TipoInfraccionDTO tipoInfraccionDTO) throws Exception {
-        this.manageTipoInfraccionInterface.saveOrUpdate(tipoInfraccionDTO);
+        this.managerTipoInfraccionInterface.saveOrUpdate(tipoInfraccionDTO);
     }
 
     @Override
     public TipoInfraccionDTO findById(TipoInfraccionDTO tipoInfraccionDTO) throws Exception {
-        return this.manageTipoInfraccionInterface.findById(tipoInfraccionDTO);
+        return this.managerTipoInfraccionInterface.findById(tipoInfraccionDTO);
     }
 
     @Override
     public void delete(TipoInfraccionDTO tipoInfraccionDTO) throws Exception {
-        this.manageTipoInfraccionInterface.delete(tipoInfraccionDTO);
+        this.managerTipoInfraccionInterface.delete(tipoInfraccionDTO);
     }
 
+    @Override
+    public List<Map<String, Object>> selectAll2() throws Exception {
+        return this.managerTipoInfraccionInterface.selectAll2();
+    }
 
 }

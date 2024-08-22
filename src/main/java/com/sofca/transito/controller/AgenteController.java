@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
+@CrossOrigin
 @RestController
 @Slf4j
 @RequestMapping("/agentesdetransito/")
@@ -53,7 +54,7 @@ public class AgenteController {
 
         return ResponseEntity.ok(message);
     }
-    @DeleteMapping({"/Delete"})
+    @PostMapping({"/Delete"})
     public ResponseEntity<ResponseMessage<TipoInfraccionDTO>> delete(@RequestBody AgenteDTO request) {
         log.debug("REST request to Delete Agente : {}", request);
         ResponseMessage message =null;

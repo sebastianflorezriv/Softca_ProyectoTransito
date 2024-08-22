@@ -42,7 +42,7 @@ public class TipoInfraccionDaoImplements implements  TipoInfraccionDaoInterface 
     }
 
     @Override
-    public List<Map<String, Object>> selectAll2(TipoInfraccionDTO tipoInfraccionDTO) {
+    public List<Map<String, Object>> selectAll2() {
         String SQL = "SELECT id,nombreinfraccion,descripcion,normativa,valor FROM tiposinfracciones";
         return jdbcTemplate.queryForList(SQL);
     }
