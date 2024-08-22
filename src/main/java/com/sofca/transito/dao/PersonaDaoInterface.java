@@ -9,7 +9,7 @@ public interface PersonaDaoInterface {
 
     void insert(PersonaDTO personaDTO);
     List<PersonaDTO> selectAll();
-    public List<Map<String,Object>> selectAll2(PersonaDTO personaDTO);
+    public List<Map<String,Object>> selectAll2();
     PersonaDTO findById(PersonaDTO personaDTO);
     void update(PersonaDTO personaDTO);
     void delete(PersonaDTO personaDTO);
