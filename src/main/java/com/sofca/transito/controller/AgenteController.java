@@ -53,7 +53,7 @@ public class AgenteController {
 
         return ResponseEntity.ok(message);
     }
-    @PostMapping({"/Delete"})
+    @DeleteMapping({"/Delete"})
     public ResponseEntity<ResponseMessage<TipoInfraccionDTO>> delete(@RequestBody AgenteDTO request) {
         log.debug("REST request to Delete Agente : {}", request);
         ResponseMessage message =null;
