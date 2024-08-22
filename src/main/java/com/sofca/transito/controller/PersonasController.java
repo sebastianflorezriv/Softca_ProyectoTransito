@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
+@CrossOrigin
 
 @RestController
 @Slf4j
@@ -65,7 +66,7 @@ public class PersonasController {
         }
         return ResponseEntity.ok(message);
     }
-    @DeleteMapping({"/Delete"})
+    @PostMapping({"/Delete"})
     public ResponseEntity<ResponseMessage<PersonaDTO>> delete(@RequestBody PersonaDTO request) {
         log.debug("REST request to Delete Agente : {}", request);
         ResponseMessage message =null;
