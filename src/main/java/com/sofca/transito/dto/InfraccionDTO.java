@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Setter @Getter
 public class InfraccionDTO {
-    private int id;
+    private String id;
     private PersonaDTO persona;
     private AgenteDTO agenteTransito;
     private TipoInfraccionDTO infraccion;
