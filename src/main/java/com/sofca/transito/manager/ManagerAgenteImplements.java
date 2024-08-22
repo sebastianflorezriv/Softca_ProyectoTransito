@@ -1,10 +1,11 @@
 package com.sofca.transito.manager;
 
 import com.sofca.transito.dao.AgenteDaoInterface;
-import com.sofca.transito.dao.PersonaDaoInterface;
 import com.sofca.transito.dto.AgenteDTO;
-import com.sofca.transito.dto.PersonaDTO;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
+import java.util.Map;
 
 @Component
 public class ManagerAgenteImplements implements ManagerAgenteInterface{
@@ -32,4 +33,12 @@ public class ManagerAgenteImplements implements ManagerAgenteInterface{
     public void delete(AgenteDTO agenteDTO) {
         this.agenteDaoInterface.delete(agenteDTO);
     }
+
+    @Override
+    public List<Map<String, Object>> selectAll2() {
+
+        return this.agenteDaoInterface.selectAll2();
+    }
+
+
 }

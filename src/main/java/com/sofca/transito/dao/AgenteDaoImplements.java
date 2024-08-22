@@ -45,8 +45,9 @@ public class AgenteDaoImplements implements AgenteDaoInterface {
     }
 
     @Override
-    public List<Map<String, Object>> selectAll2(AgenteDTO agenteDTO) {
-        return null;
+    public List<Map<String, Object>> selectAll2() {
+        String SQL = " SELECT nombre,correo,contrasenaacceso,jurisdiccion,rangopolicial,numeroplaca,idsecretaria FROM agentetransito ";
+        return jdbcTemplate.queryForList(SQL);
     }
 
     @Override
