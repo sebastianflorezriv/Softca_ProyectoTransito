@@ -9,6 +9,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Map;
+
 @CrossOrigin
 @RestController
 @Slf4j
@@ -48,6 +51,37 @@ public class SecretariaController {
         }catch (Exception ex){
             message = new ResponseMessage<>(406, ex.getMessage(),null);
         }
+
+        return ResponseEntity.ok(message);
+    }
+
+    @GetMapping("/All")
+    public ResponseEntity<ResponseMessage> selectAll() {
+        List<Map<String, Object>> list = null;
+        ResponseMessage message =null;
+
+
+        try {
+            list= this.businessSecretariaInterface.selectAll2();
+            message = new ResponseMessage<>(200, "All, process successful ", list );
+        }catch (Exception exception){
+            message = new ResponseMessage<>(406, exception.getMessage(),null );
+        }
+        return ResponseEntity.ok(message);
+    }
+
+    @PostMapping({"/Delete"})
+    public ResponseEntity<ResponseMessage<SecretariaDTO>> delete(@RequestBody SecretariaDTO request) {
+        log.debug("REST request to Delete Agente : {}", request);
+        ResponseMessage message =null;
+        try{
+            this.businessSecretariaInterface.delete(request);
+
+            message = new ResponseMessage<>(200, "Delete, process successful ", request);
+        }catch (Exception ex){
+            message = new ResponseMessage<>(406, ex.getMessage(),null);
+        }
+
 
         return ResponseEntity.ok(message);
     }

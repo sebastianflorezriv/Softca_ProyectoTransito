@@ -6,6 +6,9 @@ import com.sofca.transito.dto.PersonaDTO;
 import com.sofca.transito.dto.SecretariaDTO;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.Map;
+
 @Component
 public class ManagerSecretariaImplements implements ManagerSecretariaInterface {
 
@@ -27,5 +30,15 @@ public class ManagerSecretariaImplements implements ManagerSecretariaInterface {
     public SecretariaDTO findById(SecretariaDTO secretariaDTO) {
         SecretariaDTO secretariaFound = this.secretariaDaoInterface.findById(secretariaDTO);
         return secretariaFound;
+    }
+
+    @Override
+    public void delete(SecretariaDTO secretariaDTO) {
+        this.secretariaDaoInterface.delete(secretariaDTO);
+    }
+
+    @Override
+    public List<Map<String, Object>> selectAll2() {
+        return this.secretariaDaoInterface.selectAll2();
     }
 }

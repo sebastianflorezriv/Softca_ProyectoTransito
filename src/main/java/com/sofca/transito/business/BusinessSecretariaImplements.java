@@ -7,6 +7,9 @@ import com.sofca.transito.manager.ManagerSecretariaInterface;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+import java.util.Map;
+
 @Component
 @Transactional
 public class BusinessSecretariaImplements implements BusinessSecretariaInterface {
@@ -20,5 +23,14 @@ public class BusinessSecretariaImplements implements BusinessSecretariaInterface
     }
     public SecretariaDTO findById(SecretariaDTO secretariaDTO) throws Exception{
         return this.managerSecretariaInterface.findById(secretariaDTO);
+    }
+    @Override
+    public void delete(SecretariaDTO secretariaDTO) throws Exception {
+        this.managerSecretariaInterface.delete(secretariaDTO);
+    }
+
+    @Override
+    public List<Map<String, Object>> selectAll2() throws Exception {
+        return this.managerSecretariaInterface.selectAll2();
     }
 }

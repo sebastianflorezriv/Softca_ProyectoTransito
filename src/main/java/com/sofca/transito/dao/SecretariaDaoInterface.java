@@ -12,7 +12,7 @@ public interface SecretariaDaoInterface {
 
     List<SecretariaDTO> selectAll();
 
-    public List<Map<String,Object>> selectAll2(SecretariaDTO secretariaDTO);
+    public List<Map<String,Object>> selectAll2();
 
     SecretariaDTO findById(SecretariaDTO secretariaDTO);
 

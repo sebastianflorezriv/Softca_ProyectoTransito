@@ -40,7 +40,7 @@ public class SecretariaDaoImplements implements SecretariaDaoInterface {
     }
 
     @Override
-    public List<Map<String, Object>> selectAll2(SecretariaDTO secretariaDTO) {
+    public List<Map<String, Object>> selectAll2() {
         String SQL = "SELECT idsecretaria,ciudad,jurisdiccion FROM secretariatransito";
         return jdbcTemplate.queryForList(SQL);
     }
