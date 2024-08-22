@@ -31,6 +31,7 @@ public class ManagerAgenteImplements implements ManagerAgenteInterface{
 
     @Override
     public void delete(AgenteDTO agenteDTO) {
+
         this.agenteDaoInterface.delete(agenteDTO);
     }
 
