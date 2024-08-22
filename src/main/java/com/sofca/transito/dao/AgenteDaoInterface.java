@@ -10,7 +10,7 @@ public interface AgenteDaoInterface {
 
     void insert(AgenteDTO agenteDTO);
     List<AgenteDTO> selectAll();
-    public List<Map<String,Object>> selectAll2(AgenteDTO agenteDTO);
+    public List<Map<String,Object>> selectAll2();
     AgenteDTO findById(AgenteDTO agenteDTO);
     void update(AgenteDTO agenteDTO);
     void delete(AgenteDTO agenteDTO);

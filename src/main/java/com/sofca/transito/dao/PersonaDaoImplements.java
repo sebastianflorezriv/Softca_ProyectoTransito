@@ -34,6 +34,20 @@ public class PersonaDaoImplements implements PersonaDaoInterface {
     }
 
     @Override
+    public List<PersonaDTO> selectAll() {
+        return null;
+    }
+
+    @Override
+    public List<Map<String, Object>> selectAll2() {
+        String SQL = " SELECT cedula,nombrepersona,telefono,correo,placavehicular FROM personanatural ";
+        return jdbcTemplate.queryForList(SQL);
+    }
+
+
+
+
+    @Override
     public void update(PersonaDTO personaDTO) {
 
        String UPDATE = "UPDATE personanatural\\n\" +\n" +
@@ -50,12 +64,7 @@ public class PersonaDaoImplements implements PersonaDaoInterface {
             return;
 
         }
-    @Override
-    public List<PersonaDTO> selectAll() {
 
-        String SQL = "SELECT cedula,nombrepersona,telefono,correo,placavehicular FROM personanatural";
-        return jdbcTemplate.query(SQL, new PersonaMapper());
-    }
 
     @Override
     public PersonaDTO findById(PersonaDTO personaDTO) {
@@ -82,11 +91,6 @@ public class PersonaDaoImplements implements PersonaDaoInterface {
 
     }
 
-    @Override
-    public List<Map<String,Object>> selectAll2(PersonaDTO personaDTO) {
 
-        String SQL = "SELECT cedula,nombrepersona,telefono,correo,placavehicular FROM personanatural";
-        return jdbcTemplate.queryForList(SQL);
-    }
 
 }

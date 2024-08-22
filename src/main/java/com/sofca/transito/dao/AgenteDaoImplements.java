@@ -45,8 +45,9 @@ public class AgenteDaoImplements implements AgenteDaoInterface {
     }
 
     @Override
-    public List<Map<String, Object>> selectAll2(AgenteDTO agenteDTO) {
-        return null;
+    public List<Map<String, Object>> selectAll2() {
+        String SQL = " SELECT nombre,correo,contrasenaacceso,jurisdiccion,rangopolicial,numeroplaca,idsecretaria FROM agentetransito ";
+        return jdbcTemplate.queryForList(SQL);
     }
 
     @Override
@@ -78,9 +79,7 @@ public class AgenteDaoImplements implements AgenteDaoInterface {
     @Override
     public void update(AgenteDTO agenteDTO) {
 
-        String UPDATE = "UPDATE agentetransito\\n\" +\n" +
-                "                    \"SET nombre=?,correo=?,contrasenaacceso=?,jurisdiccion=?,rangopolicial=?,numeroplaca=?,idsecretaria=?\\n\" +\n" +
-                "                    \"WHERE cedula=?\"";
+        String UPDATE = "UPDATE agentetransito SET nombre=?,correo=?,contrasenaacceso=?,jurisdiccion=?,rangopolicial=?,numeroplaca=?,idsecretaria=? WHERE cedula=?";
 
         jdbcTemplate.update(UPDATE,
                 agenteDTO.getNombre(),
