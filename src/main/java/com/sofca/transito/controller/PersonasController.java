@@ -6,6 +6,8 @@ import com.sofca.transito.dto.PersonaDTO;
 import com.sofca.transito.dto.TipoInfraccionDTO;
 import com.sofca.transito.mensajes.ResponseMessage;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -68,17 +70,28 @@ public class PersonasController {
     }
     @PostMapping({"/Delete"})
     public ResponseEntity<ResponseMessage<PersonaDTO>> delete(@RequestBody PersonaDTO request) {
-        log.debug("REST request to Delete Agente : {}", request);
-        ResponseMessage message =null;
-        try{
+        log.debug("REST request to Delete Persona : {}", request);
+        ResponseMessage<PersonaDTO> message;
+
+        try {
+            // Llamar al servicio para eliminar la persona
             this.businessPersonaInterface.delete(request);
 
-            message = new ResponseMessage<>(200, "Delete, process successful ", request);
-        }catch (Exception ex){
-            message = new ResponseMessage<>(406, ex.getMessage(),null);
+            // Crear un mensaje de respuesta exitoso
+            message = new ResponseMessage<>(200, "Delete, process successful", request);
+        } catch (DataIntegrityViolationException ex) {
+            // Capturar excepciones relacionadas con la integridad referencial
+            log.error("Data integrity violation: {}", ex.getMessage(), ex);
+            message = new ResponseMessage<>(500, "No se puede eliminar la persona porque tiene datos relacionados.", null);
+            return ResponseEntity.badRequest().body(message);
+        } catch (Exception ex) {
+            // Capturar cualquier otra excepción general
+            log.error("Error general al eliminar la persona: {}", ex.getMessage(), ex);
+            message = new ResponseMessage<>(500, "Error al procesar la solicitud", null);
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(message);
         }
-
 
         return ResponseEntity.ok(message);
     }
+
 }
