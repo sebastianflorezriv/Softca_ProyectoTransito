@@ -50,9 +50,7 @@ public class PersonaDaoImplements implements PersonaDaoInterface {
     @Override
     public void update(PersonaDTO personaDTO) {
 
-       String UPDATE = "UPDATE personanatural\\n\" +\n" +
-        "                    \"SET nombrepersona=?,telefono=?,correo=?,placavehicular=?\\n\" +\n" +
-        "                    \"WHERE cedula=?\"";
+       String UPDATE = "UPDATE personanatural SET nombrepersona=?,telefono=?,correo=?,placavehicular=?  WHERE cedula=?";
 
         jdbcTemplate.update(UPDATE,
                 personaDTO.getNombre(),
